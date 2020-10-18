@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+ <html xmlns:th="hhtp://wwwthymeleaf.org">
+  
+<!-- Mirrored from webarch.revox.io/3.0/html/form_validations.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:00 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Formulaire Reclamamtion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrap-datepicker/css/datepicker.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-timepicker/css/bootstrap-timepicker.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/boostrap-checkbox/css/bootstrap-checkbox.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/plugins/ios-switch/ios7-switch.css" type="text/css" media="screen">
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <link href="webarch/css/webarch.css" rel="stylesheet" type="text/css" />
+    <!-- END CORE CSS FRAMEWORK -->
+  </head>
+  <!-- BEGIN BODY -->
+  <body class="">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse ">
+      <!-- BEGIN TOP NAVIGATION BAR -->
+      <div class="navbar-inner">
+        <div class="header-seperation">
+          <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+            <li class="dropdown">
+              <a href="#main-menu" data-webarch="toggle-left-side">
+                <i class="material-icons">menu</i>
+              </a>
+            </li>
+          </ul>
+          <!-- BEGIN LOGO -->
+          <a th:href="@{/Acceuil}">
+            <img src="assets/img/logo.png" class="logo" alt="" data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21" />
+          </a>
+          <!-- END LOGO -->
+          <ul class="nav pull-right notifcation-center">
+            <li class="dropdown hidden-xs hidden-sm">
+              <a th:href="@{/Acceuil}" class="dropdown-toggle active" data-toggle="">
+                <i class="material-icons">home</i>
+              </a>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm">
+             <a th:href="@{/ListReclamamtionClient}" class="dropdown-toggle">
+                <i class="material-icons">email</i><span class="badge bubble-only"></span>
+              </a>
+            </li>
+            <li class="dropdown visible-xs visible-sm">
+              <a href="#" data-webarch="toggle-right-side">
+                <i class="material-icons">chat</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <div class="header-quick-nav">
+          <!-- BEGIN TOP NAVIGATION MENU -->
+          <div class="pull-left">
+            <ul class="nav quick-section">
+              <li class="quicklinks">
+                <a href="#" class="" id="layout-condensed-toggle">
+                  <i class="material-icons">menu</i>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav quick-section">
+             
+             
+             
+              
+            </ul>
+          </div>
+          
+          <!-- END TOP NAVIGATION MENU -->
+          <!-- BEGIN CHAT TOGGLER -->
+          <div class="pull-right">
+            <div class="chat-toggler sm">
+              
+            </div>
+            <ul class="nav quick-section ">
+              <li class="quicklinks">
+                <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                  <i class="material-icons">tune</i>
+                </a>
+                <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                 
+                  
+                 
+                  <li class="divider"></li>
+                  <li>
+                    <a th:href="@{/logout}"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Deconnexion</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="quicklinks"> <span class="h-seperate"></span></li>
+             
+            </ul>
+          </div>
+          <!-- END CHAT TOGGLER -->
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+      </div>
+      <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <!-- <div class="page-container row-fluid"> -->
+     <!-- BEGIN SIDEBAR -->
+      <div class="page-sidebar " id="main-menu">
+        <!-- BEGIN MINI-PROFILE -->
+        <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+          <div class="user-info-wrapper sm">
+            
+            <div class="user-info sm">
+              <div class="username"><p th:text="${userLive.username}"></p> </div>
+              <div class="status"><p th:text="${userLive.email}"></p></div>
+            </div>
+          </div>
+          <!-- END MINI-PROFILE -->
+          <!-- BEGIN SIDEBAR MENU -->
+			<p class="menu-title sm">Naviguer <span class="pull-right"><a href="javascript:;"><i class="material-icons">refresh</i></a></span></p>
+          <ul>
+            <li class="start "> <a href="index.html"><i class="material-icons">home</i> <span class="title">Acceuil</span> <span class="selected"></span> <span class="arrow "></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/Acceuil}">Acceuil </a> </li>
+              </ul>
+            </li>
+           
+            <li>
+             <a th:href="@{/ListReclamamtionClient}"> <i class="material-icons">email</i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">203</span>
+              </a>
+            </li>
+            
+             
+          
+   
+            
+            <li>
+              <a href="javascript:;"> <i class="material-icons">location_on</i> <span class="title">Maps</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                  <li> <a th:href="@{/MapsClient}"> Station Maps </a> </li>
+              </ul>
+            </li>
+           
+            <li>
+            	 <a href="javascript:;"> <i class="material-icons">history</i> <span class="title">Historique </span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+              <li>
+              <a th:href="@{/HistoriqueClient}"> Historique Utilisation</a> 
+            	
+            </li>
+            
+         
+            </ul>
+            </li>
+            
+             <li>
+            	 <a href="javascript:;"> <i class="material-icons">payment</i> <span class="title">Abonnements</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+           
+            
+            <li>
+              <a th:href="@{/PageSabonner}"> S'abonner</a> 
+            	
+            </li>
+            </ul>
+            </li>
+            
+           
+           
+          <!-- END SIDEBAR MENU -->
+        </div>
+      </div> 
+    
+          <!-- END SIDEBAR MENU -->
+        </div>
+      </div>
+     
+      </div>
+      <!-- END SIDEBAR -->
+        </div>
+      </div> 
+
+
+    
+      <!-- END SIDEBAR -->
+      
+      <!-- BEGIN PAGE CONTAINER-->
+      <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div id="portlet-config" class="modal hide">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"></button>
+            <h3>Widget Settings</h3>
+          </div>
+          <div class="modal-body"> Widget settings form goes here </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="content">
+          <ul class="breadcrumb">
+            <li>
+              <p>Vous etes Ici</p>
+            </li>
+            <li><a th:href="@{/PageSabonner}" class="active">S'abonner</a> </li>
+          </ul>
+          <div class="page-title"> <i class="icon-custom-left"></i>
+            <h3>Reclamer  <span class="semi-bold"></span></h3>
+          </div>
+          <div class="row">
+            <div class="col-md-10">
+              <div class="grid simple form-grid">
+                <div class="grid-title no-border">
+                  <h4>Formulaire <span class="semi-bold">De Reclamation</span></h4>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="#grid-config" data-toggle="modal" class="config"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body no-border">
+                  <br>
+                  <form th:action="@{/nvReclamation}"   id="form_traditional_validation" name="form_traditional_validation" role="form" autocomplete="off" class="validate">
+                    
+                   
+                    <div class="form-group">
+                      <label class="form-label">Description</label> <span class="help">"</span>
+                      <textarea class="form-control" id="form1Amount" name="description" type="text" required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                      <div class="pull-right">
+                        <button class="btn btn-success btn-cons" type="submit"><i class="icon-ok"></i> Reclamer</button>
+                       
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+              <div class="col-md-6 col-sm-6" th:if="${Exception!=null}">
+             <div class="tiles red  m-b-10" th:if="${Exception==true}" id="exception">
+                <div class="tiles-body">
+                  <div class="controller">
+                   
+                  </div>
+                  <h1 class="text-black no-margin semi-bold">Erreur</h1>
+                    
+                  <h3 class="text-black Arial semi-bold  "> Données Incoherente !!</h3>
+                 
+                 
+                  
+             		</div>
+                </div>
+            
+            </div>
+            
+            
+            
+          </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <!-- END PAGE -->
+    <!-- END CONTAINER -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <!-- BEGIN JS DEPENDECENCIES-->
+    <script src="assets/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-block-ui/jqueryblockui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <!-- END CORE JS DEPENDECENCIES-->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="webarch/js/webarch.js" type="text/javascript"></script>
+    <script src="assets/js/chat.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="assets/plugins/boostrap-form-wizard/js/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script src="assets/js/form_validations.js" type="text/javascript"></script>
+    <script>
+    $( document ).ready(function(){
+            $('#exception').fadeIn('slow', function(){
+               $('#exception').delay(2500).fadeOut(); 
+            });
+        });
+        
+    </script>
+    
+    <!-- END JAVASCRIPTS -->
+  </body>
+
+<!-- Mirrored from webarch.revox.io/3.0/html/form_validations.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:02 GMT -->
+</html>

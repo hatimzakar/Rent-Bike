@@ -1,0 +1,73 @@
+/* #primary-menu{float: none;}
+#primary-menu ul{margin: auto;}
+#primary-menu ul li > a{padding: 15px;}
+#header, #header-wrap, #logo img{height: auto; margin-bottom: 4px;}
+#header.sticky-style-3 {
+    height: 150px;
+}
+#header, #header-wrap, #logo img {
+    margin-bottom: 0px;
+}
+
+
+@media (max-width: 575.98px){
+    #primary-menu-trigger {
+        left: 0;
+    }
+}
+@media (max-width: 991.98px){
+    #primary-menu-trigger {
+        top: 10px;
+        left: 0;
+    }
+}
+ */
+
+#header, #header-wrap, #logo img{height: 76px;}
+#primary-menu-trigger, #page-submenu-trigger { font-size: 2em;}
+#primary-menu.sub-title > ul > li > a, #primary-menu.sub-title > div > ul > li > a{padding: 27px 20px 8px;}
+@media (max-width: 575.98px){
+    .swiper_wrapper .slider-caption h2 {
+        font-size: 1rem;
+    }
+}
+.slider-caption p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.feature-box p, .text-big{
+    font-size: 1.2em;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+}
+.logopyamfast{
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.text-blue-light{
+    color: #009cde;
+}
+.text-blue-dark{
+    color: #002f86;
+}
+.text-black{
+    color: #000;
+}
+
+.gradient-to-left-bottom{
+    background-image: linear-gradient(to left bottom, #002f86, #004a9f, #0065b6, #0081cb, #009cde);
+    color: #FFF;
+}
+.cta{
+    padding: 20px;
+    text-align: center;
+    font-size: 1.7em;
+    font-family: 'Raleway', sans-serif;
+    margin: 20px 0;
+}
+.unstyled{list-style: none;}
+.padding-top-10{padding-top: 10px; line-height: 1;}
+.button.normal{white-space: normal; height: auto; line-height: 30px !important; padding: 20px 40px;}
+.terms .fancy-title{margin: 30px 0 10px 0;}
+.terms b{font-weight: 700;}

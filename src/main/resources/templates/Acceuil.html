@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html xmlns:th="hhtp://wwwthymeleaf.org">
+  
+<!-- Mirrored from webarch.revox.io/3.0/html/blank_template.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:47:31 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Acceuil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <link href="webarch/css/webarch.css" rel="stylesheet" type="text/css" />
+    <!-- END CORE CSS FRAMEWORK -->
+  </head>
+  <!-- END HEAD -->
+  <!-- BEGIN BODY -->
+  <body class="">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse ">
+      <!-- BEGIN TOP NAVIGATION BAR -->
+      <div class="navbar-inner">
+        <div class="header-seperation">
+          <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+            <li class="dropdown">
+              <a href="#main-menu" data-webarch="toggle-left-side">
+                <i class="material-icons">menu</i>
+              </a>
+            </li>
+          </ul>
+          <!-- BEGIN LOGO -->
+          <a th:href="@{/Acceuil}">
+            <img src="assets/img/logo.png" class="logo" alt="" data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21" />
+          </a>
+          <!-- END LOGO -->
+          <ul class="nav pull-right notifcation-center">
+            <li class="dropdown hidden-xs hidden-sm">
+              <a th:href="@{/Acceuil}" class="dropdown-toggle active" data-toggle="">
+                <i class="material-icons">home</i>
+              </a>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm">
+             <a th:href="@{/ListReclamamtionClient}" class="dropdown-toggle">
+                <i class="material-icons">email</i><span class="badge bubble-only"></span>
+              </a>
+            </li>
+            <li class="dropdown visible-xs visible-sm">
+              <a href="#" data-webarch="toggle-right-side">
+                <i class="material-icons">chat</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <div class="header-quick-nav">
+          <!-- BEGIN TOP NAVIGATION MENU -->
+          <div class="pull-left">
+            <ul class="nav quick-section">
+              <li class="quicklinks">
+                <a href="#" class="" id="layout-condensed-toggle">
+                  <i class="material-icons">menu</i>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav quick-section">
+             
+             
+             
+              
+            </ul>
+          </div>
+          
+          <!-- END TOP NAVIGATION MENU -->
+          <!-- BEGIN CHAT TOGGLER -->
+          <div class="pull-right">
+            <div class="chat-toggler sm">
+              
+            </div>
+            <ul class="nav quick-section ">
+              <li class="quicklinks">
+                <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                  <i class="material-icons">tune</i>
+                </a>
+                <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                 
+                  
+                 
+                  <li class="divider"></li>
+                  <li>
+                    <a th:href="@{/logout}"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Deconnexion</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="quicklinks"> <span class="h-seperate"></span></li>
+             
+            </ul>
+          </div>
+          <!-- END CHAT TOGGLER -->
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+      </div>
+      <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <!-- <div class="page-container row-fluid"> -->
+     <!-- BEGIN SIDEBAR -->
+      <div class="page-sidebar " id="main-menu">
+        <!-- BEGIN MINI-PROFILE -->
+        <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+          <div class="user-info-wrapper sm">
+            
+            <div class="user-info sm">
+              <div class="username"><p th:text="${userLive.username}"></p> </div>
+              <div class="status"><p th:text="${userLive.email}"></p></div>
+            </div>
+          </div>
+          <!-- END MINI-PROFILE -->
+          <!-- BEGIN SIDEBAR MENU -->
+			<p class="menu-title sm">Naviguer <span class="pull-right"><a href="javascript:;"><i class="material-icons">refresh</i></a></span></p>
+          <ul>
+            <li class="start "> <a href="index.html"><i class="material-icons">home</i> <span class="title">Acceuil</span> <span class="selected"></span> <span class="arrow "></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/Acceuil}">Acceuil </a> </li>
+              </ul>
+            </li>
+           
+            <li>
+             <a th:href="@{/ListReclamamtionClient}"> <i class="material-icons">email</i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">203</span>
+              </a>
+            </li>
+            
+             
+          
+   
+            
+            <li>
+              <a href="javascript:;"> <i class="material-icons">location_on</i> <span class="title">Maps</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                  <li> <a th:href="@{/MapsClient}"> Station Maps </a> </li>
+              </ul>
+            </li>
+           
+            <li>
+            	 <a href="javascript:;"> <i class="material-icons">history</i> <span class="title">Historique </span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+              <li>
+              <a th:href="@{/HistoriqueClient}"> Historique Utilisation</a> 
+            	
+            </li>
+            
+         
+            </ul>
+            </li>
+            
+             <li>
+            	 <a href="javascript:;"> <i class="material-icons">payment</i> <span class="title">Abonnements</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+           
+            
+            <li>
+              <a th:href="@{/PageSabonner}"> S'abonner</a> 
+            	
+            </li>
+            </ul>
+            </li>
+            
+           
+           
+         <!--  <div class="side-bar-widgets">
+        
+            <ul class="folders">
+             
+            
+              <li class="folder-input" style="display:none">
+                <input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="">
+              </li>
+            </ul>
+            <p class="menu-title">PROJECTS </p>
+            <div class="status-widget">
+              <div class="status-widget-wrapper">
+              
+                <p>Redesign home page</p>
+              </div>
+            </div>
+            <div class="status-widget">
+              <div class="status-widget-wrapper">
+                <div class="title">envato<a href="#" class="remove-widget"><i class="material-icons">close</i></a></div>
+                <p>Statistical report</p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>          <!-- END SIDEBAR MENU -->
+        </div>
+      </div> -->
+    
+          <!-- END SIDEBAR MENU -->
+     
+      <!-- END SIDEBAR -->
+      <!-- BEGIN PAGE CONTAINER-->
+      <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div id="portlet-config" class="modal hide">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"></button>
+            <h3>Widget Settings</h3>
+          </div>
+          <div class="modal-body"> Widget settings form goes here </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="content">
+          <div class="page-title">
+            <h3>Acceuil</h3>
+          </div>
+          
+          <div id="container">
+            <div class="row 2col">
+              <div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
+                <div class="tiles blue added-margin">
+                  <div class="tiles-body">
+                    <div class="controller">
+                      <a href="javascript:;" class="reload"></a>
+                      <a href="javascript:;" class="remove"></a>
+                    </div>
+                    
+                    <h3 class="text-black no-margin semi-bold"> Gueliz</h3>
+                  <h1 class="text-white bold "><span data-animation-duration="900"  th:data-value="${s1}" class="animate-number"></span></h1>
+                  <h4 class="text-black semi-bold  ">Velos Present</h4>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
+                <div class="tiles green added-margin">
+                  <div class="tiles-body">
+                    <div class="controller">
+                      <a href="javascript:;" class="reload"></a>
+                      <a href="javascript:;" class="remove"></a>
+                    </div>
+                 
+                    <h3 class="text-black no-margin semi-bold"> Menara Mall</h3>
+                  <h1 class="text-white bold "><span data-animation-duration="900"  th:data-value="${s2}" class="animate-number"></span></h1>
+                  <h4 class="text-black semi-bold  ">Velos Present</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 spacing-bottom">
+                <div class="tiles red added-margin">
+                  <div class="tiles-body">
+                    <div class="controller">
+                      <a href="javascript:;" class="reload"></a>
+                      <a href="javascript:;" class="remove"></a>
+                    </div>
+                    
+                    <h3 class="text-black no-margin semi-bold"> Majorelle</h3>
+                  <h1 class="text-white bold "><span data-animation-duration="900"  th:data-value="${s3}" class="animate-number"></span></h1>
+                  <h4 class="text-black semi-bold  ">Velos Present</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="tiles purple added-margin">
+                  <div class="tiles-body">
+                    <div class="controller">
+                      <a href="javascript:;" class="reload"></a>
+                      <a href="javascript:;" class="remove"></a>
+                    </div>
+                   
+                       <h3 class="text-black no-margin semi-bold"> Abonnements</h3>
+                  <h1 class="text-white bold "><span data-animation-duration="900"  th:data-value="${abn}" class="animate-number"></span></h1>
+                  <h4 class="text-black semi-bold  ">Clients Abonnées</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 spacing-bottom">
+                <div class="row tiles-container tiles white spacing-bottom">
+                  <div class="tile-more-content col-md-4 col-sm-4 no-padding">
+                    <div class="tiles green">
+                      <div class="tiles-body">
+                        <div class="heading"> Stations </div>
+                       
+                      </div>
+                      <div class="tile-footer">
+                        <div class="iconplaceholder"><i class="fa fa-map-marker"></i></div>
+                        3 Station , 200 velo</div>
+                    </div>
+                    <div class="tiles-body">
+                      <ul class="progress-list">
+                        
+                       
+                      
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tiles white col-md-8 col-sm-8 no-padding">
+                    <div class="tiles-chart">
+                      <div class="controller">
+                        <a href="javascript:;" class="reload"></a>
+                        <a href="javascript:;" class="remove"></a>
+                      </div>
+                      <div class="tiles-body">
+                        <div class="tiles-title">GEO-LOCATIONS</div>
+                        
+                      </div>
+                      <div id="map" style="height:700px ;width:800px"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+               
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          
+          
+        </div>
+      </div>
+      <!-- BEGIN CHAT -->
+      <!-- END CHAT -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- END CONTAINER -->
+   <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <!-- BEGIN JS DEPENDECENCIES-->
+    <script src="assets/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-block-ui/jqueryblockui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <!-- END CORE JS DEPENDECENCIES-->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="webarch/js/webarch.js" type="text/javascript"></script>
+   <!--  <script src="assets/js/chat.js" type="text/javascript"></script> -->
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL JS -->
+    <script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-ricksaw-chart/js/raphael-min.js"></script>
+    <script src="assets/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
+    <script src="assets/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
+    <script src="assets/plugins/jquery-morris-chart/js/morris.min.js"></script>
+    <script src="assets/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
+    <script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-jvectormap/js/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-jvectormap/js/jquery-jvectormap-us-lcc-en.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
+    <script src="assets/plugins/jquery-flot/jquery.flot.min.js"></script>
+    <script src="assets/plugins/jquery-flot/jquery.flot.animator.min.js"></script>
+    <script src="assets/plugins/skycons/skycons.js"></script>
+    <!-- END PAGE LEVEL PLUGINS   -->
+    <!-- PAGE JS -->
+    <script src="assets/js/dashboard.js" type="text/javascript"></script>
+    
+    
+     <script>
+    function initMap()
+   		
+   		//Options
+   		{
+   			var options = 
+   			{
+   				zoom:15,
+   				center:{lat: 31.629697,lng:-8.015235}
+   					
+   			}
+   			
+   			// new Map
+   			var map =new google.maps.Map(document.getElementById('map'), options);
+   			
+   			// Add MArker 
+   			
+   			
+   			
+   		//	var  marker = new google.maps.Marker({
+   			//	 position:{lat:31.629697,lng:-8.015235}, map:map
+   			// })
+   		var info ='<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Station gueliz</h1>'+
+        '<div id="bodyContent">'+
+        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+        'sandstone rock formation in the southern part of the '+
+        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+        'south west of the nearest large town, Alice Springs; 450&#160;km '+
+        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+        'Aboriginal people of the area. It has many springs, waterholes, '+
+        'rock caves and ancient paintings. Uluru is listed as a World '+
+        'Heritage Site.</p>'+
+        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+        '(last visited June 22, 2009).</p>'+
+        '</div>'+
+        '</div>';
+   			
+   			function addMarker(coords,info)
+   			{
+   				var marker= new google.maps.Marker({
+   					position:coords,
+   					map:map,
+   					icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png'
+   				
+   				});
+   				
+   				var infowindow = new google.maps.InfoWindow({
+   				    content: info,
+   				})
+   			
+   				marker.addListener('click', function() {
+   			    infowindow.open(map, marker)
+   			    
+   				
+   				})
+   				
+   				
+   			
+   				
+   				
+   			}
+   			
+   			
+   			
+   			
+   			
+   			addMarker({lat:31.629697,lng:-8.015239},info);
+   			addMarker({lat:31.6260,lng:-7.9891},info);
+   			addMarker({lat:31.6349,lng:-8.0115},info);
+   			addMarker({lat:31.6231,lng:- 8.0152},info);
+   			
+   			
+   		}
+	</script>
+
+
+	</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6A01EAkUI-kRwT02t4u5IQHV-yNyoFBQ&callback=initMap"
+    async defer></script>
+    
+  </body>
+
+<!-- Mirrored from webarch.revox.io/3.0/html/blank_template.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:47:31 GMT -->
+</html>

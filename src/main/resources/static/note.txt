@@ -1,0 +1,9 @@
+
+# Lactivation devtools  en mode developpement enendre la desactivaton du cache 
+
+
+
+Exception throw new runTieException("Message fo the exception");
+
+@Transactional
+- Exige la validation du traitement tout en entier ou bien l'annulation de tous le traiteent de la methode   

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+  <html xmlns:th="hhtp://wwwthymeleaf.org">
+<!-- Mirrored from webarch.revox.io/3.0/html/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:02 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Abonnements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/jquery-datatable/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <link href="webarch/css/webarch.css" rel="stylesheet" type="text/css" />
+    <!-- END CORE CSS FRAMEWORK -->
+  </head>
+  <!-- END HEAD -->
+  <!-- BEGIN BODY -->
+  <body class="">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse ">
+      <!-- BEGIN TOP NAVIGATION BAR -->
+       <div class="navbar-inner">
+        <div class="header-seperation">
+          <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+            <li class="dropdown">
+              <a href="#main-menu" data-webarch="toggle-left-side">
+                <i class="material-icons">menu</i>
+              </a>
+            </li>
+          </ul>
+          <!-- BEGIN LOGO -->
+          <a th:href="@{/AcceuilAdmin}">
+            <img src="assets/img/logo.png" class="logo" alt="" data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21" />
+          </a>
+          <!-- END LOGO -->
+          <ul class="nav pull-right notifcation-center">
+            <li class="dropdown hidden-xs hidden-sm">
+              <a th:href="@{/AcceuilAdmin}" class="dropdown-toggle active" data-toggle="">
+                <i class="material-icons">home</i>
+              </a>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm">
+             <a th:href="@{/ListReclamamtionClient}" class="dropdown-toggle">
+                <i class="material-icons">email</i><span class="badge bubble-only"></span>
+              </a>
+            </li>
+            <li class="dropdown visible-xs visible-sm">
+              <a href="#" data-webarch="toggle-right-side">
+                <i class="material-icons">chat</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <div class="header-quick-nav">
+          <!-- BEGIN TOP NAVIGATION MENU -->
+          <div class="pull-left">
+            <ul class="nav quick-section">
+              <li class="quicklinks">
+                <a href="#" class="" id="layout-condensed-toggle">
+                  <i class="material-icons">menu</i>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav quick-section">
+             
+             
+             
+              
+            </ul>
+          </div>
+          
+          <!-- END TOP NAVIGATION MENU -->
+          <!-- BEGIN CHAT TOGGLER -->
+          <div class="pull-right">
+            <div class="chat-toggler sm">
+              
+            </div>
+            <ul class="nav quick-section ">
+              <li class="quicklinks">
+                <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                  <i class="material-icons">tune</i>
+                </a>
+                <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                 
+                  
+                 
+                  <li class="divider"></li>
+                  <li>
+                    <a th:href="@{/logout}"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Deconnexion</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="quicklinks"> <span class="h-seperate"></span></li>
+             
+            </ul>
+          </div>
+          <!-- END CHAT TOGGLER -->
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+      </div>
+      <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+     <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar " id="main-menu">
+        <!-- BEGIN MINI-PROFILE -->
+        <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+          <div class="user-info-wrapper sm">
+            
+           <div class="user-info sm">
+              <div class="username"><p th:text="${userLive.username}"></p> </div>
+              <div class="status"><p th:text="${userLive.email}"></p></div>
+            </div>
+          </div>
+          <!-- END MINI-PROFILE -->
+          <!-- BEGIN SIDEBAR MENU -->
+          <p class="menu-title sm">BROWSE <span class="pull-right"><a href="javascript:;"><i class="material-icons">refresh</i></a></span></p>
+          <ul>
+            <li class="start "> <a href="index.html"><i class="material-icons">home</i> <span class="title">Acceuil</span> <span class="selected"></span> <span class="arrow "></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/AcceuilAdmin}"> Acceuil </a> </li>
+              </ul>
+            </li>
+            <li>
+            <li>
+             <a th:href="@{/listReclamation}"> <i class="material-icons">email</i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">203</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;"> <i class="material-icons">directions_bike</i> <span class="title">Station</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/Station1}">Gueliz </a> </li>
+                <li> <a th:href="@{/Station2}">Menara Mall</a> </li>
+                <li> <a th:href="@{/Station3}">Majorelle</a> </li>
+              </ul>
+            </li>
+          
+          
+           
+            
+            <li>
+              <a href="javascript:;"> <i class="material-icons">location_on</i> <span class="title">Maps</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                  <li> <a th:href="@{/Maps}"> Station Maps </a> </li>
+              </ul>
+            </li>
+            <li>
+            	 <a href="javascript:;"> <i class="material-icons">payment</i> <span class="title">Abonnements</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+              <li>
+              <a th:href="@{/ListAbn}"> Verification Pin </a> 
+            	
+            </li>
+                        </ul>
+            </li>
+           
+           
+         
+          <!-- END SIDEBAR MENU -->
+        </div>
+      </div>
+      <a href="#" class="scrollup">Scroll</a>
+      <div class="footer-widget">
+        <div class="progress transparent progress-small no-radius no-margin">
+          <div class="progress-bar progress-bar-success animate-progress-bar" data-percentage="79%" style="width: 79%;"></div>
+        </div>
+        <div class="pull-right">
+          <div class="details-status"> <span class="animate-number" data-value="86" data-animation-duration="560">86</span>% </div>
+          <a href="lockscreen.html"><i class="material-icons">power_settings_new</i></a></div>
+      </div>
+      <!-- END SIDEBAR -->
+      
+      
+    <div class="page-content">
+    
+    
+    
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div id="portlet-config" class="modal hide">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"></button>
+            <h3>Widget Settings</h3>
+          </div>
+          <div class="modal-body"> Widget settings form goes here </div>
+          
+          
+        </div>
+        <div class="clearfix"></div>
+        <div class="content">
+       
+          <ul class="breadcrumb">
+            <li>
+              <p>YOU ARE HERE</p>
+            </li>
+            <li><a href="#" class="active">Form layouts & Validations</a> </li>
+          </ul>
+          
+          <div class="page-title"> <i class="icon-custom-left"></i>
+            <h3>Station - <span class="semi-bold">Menara Mall</span></h3>
+            
+            
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="grid simple form-grid">   
+                <div class="grid-title no-border">
+                  <h2>Verifier <span class="semi-bold">Abonnement </span></h2>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                   
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body no-border">
+                  <form th:action="@{/ValiderPin}"   id="form_traditional_validation" name="form_traditional_validation" role="form" autocomplete="off" class="validate">
+                    <div class="form-group">
+                      <label class="form-label">Pin</label> <span class="help">e.g. "6789012"</span>
+                      <input class="form-control" id="form1Amount" name="pin" type="number" required>
+                    </div>
+                    
+                    
+                    
+                      <div class="col-md-6">
+                          <div class="radio">
+                            <input id="male" type="radio" name="type" value="1" >
+                            <label for="male">Mensuel</label>
+                            <input id="female" type="radio" name="type" value="2">
+                            <label for="female">Annuel</label>
+                          </div>
+                        </div>
+                        
+                       
+                    
+                    <div class="form-actions">
+                      <div class="pull-right">
+                        <button class="btn btn-success btn-cons" type="submit"><i class="icon-ok"></i> Verifier</button>
+                   
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+             <div class="col-md-6 col-sm-6" th:if="${validation!=null}">
+              <div class="tiles blue    m-b-10" th:if="${validation==true}" id="Resultat">
+                <div class="tiles-body">
+                  <div class="controller">
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                  <h3 class="text-black no-margin semi-bold">Verification Pin</h3>
+                    
+                  <h1 class="text-white Arial semi-bold  ">Verifiation Reussie !!</h1>
+                 <h3 class="text-black no-margin semi-bold">Pin Valide</h3>
+                 
+                  
+             		</div>
+                </div>
+                
+                <div class="tiles red    m-b-10" th:if="${validation==false}" id="Resultat">
+                <div class="tiles-body">
+                  <div class="controller">
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                  <h3 class="text-black no-margin semi-bold">Verification Pin</h3>
+                      <h1 class="text-white Arial semi-bold  ">Verifiation Non Reussie !!</h1>
+                  
+                  <h3 class="text-black no-margin semi-bold">Pin Non Valide</h3>
+                  
+             		</div>
+                </div>
+                
+                
+                
+                
+                
+               
+                
+              </div>
+            
+            <div class="col-md-6 col-sm-6" th:if="${Exception!=null}">
+             <div class="tiles red  m-b-10" th:if="${Exception==true}" id="exception">
+                <div class="tiles-body">
+                  <div class="controller">
+                   
+                  </div>
+                  <h1 class="text-black no-margin semi-bold">Erreur</h1>
+                    
+                  <h3 class="text-black Arial semi-bold  "> Données Incoherente !!</h3>
+                 
+                 
+                  
+             		</div>
+                </div>
+            
+            </div>
+            
+            
+            
+          </div>
+           <div class="row-fluid">
+            <div class="span12">
+              <div class="grid simple ">
+                <div class="grid-title">
+                  <h2>Historique <span class="semi-bold">Abonnements</span></h2>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="#grid-config" data-toggle="modal" class="config"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body ">
+                  <table class="table" id="example3">
+                    <thead>
+                      <tr>
+                        <th>ID  </th>
+                        <th>Type Abonnememnt </th>
+                        <th>Pin</th>
+                        <th>CLient</th>
+                        <th>Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="even gradeC" th:each="list : ${listAbn}">
+								<td th:text="${list.id}"></td>
+								<td th:text="${list.Type}"></td>
+								<td th:text="${list.pin}"></td>
+								
+								<td th:text="${list.client.id}"></td>
+								<td th:text="${list.date}"></td>
+								
+						</tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+            </div>
+      
+      <!-- END CHAT -->
+    </div>
+    <!-- END PAGE -->
+    <!-- END CONTAINER -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <!-- BEGIN JS DEPENDECENCIES-->
+    <script src="assets/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-block-ui/jqueryblockui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <!-- END CORE JS DEPENDECENCIES-->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="webarch/js/webarch.js" type="text/javascript"></script>
+    <script src="assets/js/chat.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/extra/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+    <!-- END PAGE LEVEL JS INIT -->
+    <script src="assets/js/datatables.js" type="text/javascript"></script>
+    
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> --> 
+        <script>
+      
+        $( document ).ready(function(){
+            $('#Resultat').fadeIn('slow', function(){
+               $('#Resultat').delay(5000).fadeOut(); 
+            });
+        });
+        
+        
+        </script>
+        
+        <script>
+      
+        $( document ).ready(function(){
+            $('#exception').fadeIn('slow', function(){
+               $('#exception').delay(2500).fadeOut(); 
+            });
+        });
+        
+        
+        </script>
+    
+    
+    <!-- END JAVASCRIPTS -->
+  </body>
+
+<!-- Mirrored from webarch.revox.io/3.0/html/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:18 GMT -->
+</html>

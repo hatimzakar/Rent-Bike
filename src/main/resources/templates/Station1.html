@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+  <html xmlns:th="hhtp://wwwthymeleaf.org">
+<!-- Mirrored from webarch.revox.io/3.0/html/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:02 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Gestion Station</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/jquery-datatable/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN PLUGIN CSS -->
+    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
+    <!-- END PLUGIN CSS -->
+    <!-- BEGIN CORE CSS FRAMEWORK -->
+    <link href="webarch/css/webarch.css" rel="stylesheet" type="text/css" />
+    <!-- END CORE CSS FRAMEWORK -->
+  </head>
+  <!-- END HEAD -->
+  <!-- BEGIN BODY -->
+  <body class="">
+    <!-- BEGIN HEADER -->
+    <div class="header navbar navbar-inverse ">
+      <!-- BEGIN TOP NAVIGATION BAR -->
+      <div class="navbar-inner">
+        <div class="header-seperation">
+          <ul class="nav pull-left notifcation-center visible-xs visible-sm">
+            <li class="dropdown">
+              <a href="#main-menu" data-webarch="toggle-left-side">
+                <i class="material-icons">menu</i>
+              </a>
+            </li>
+          </ul>
+          <!-- BEGIN LOGO -->
+          <a th:href="@{/Acceuil}">
+            <img src="assets/img/logo.png" class="logo" alt="" data-src="assets/img/logo.png" data-src-retina="assets/img/logo2x.png" width="106" height="21" />
+          </a>
+          <!-- END LOGO -->
+          <ul class="nav pull-right notifcation-center">
+            <li class="dropdown hidden-xs hidden-sm">
+              <a th:href="@{/AcceuilAdmin}" class="dropdown-toggle active" data-toggle="">
+                <i class="material-icons">home</i>
+              </a>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm">
+             <a th:href="@{/ListReclamamtionClient}" class="dropdown-toggle">
+                <i class="material-icons">email</i><span class="badge bubble-only"></span>
+              </a>
+            </li>
+            <li class="dropdown visible-xs visible-sm">
+              <a href="#" data-webarch="toggle-right-side">
+                <i class="material-icons">chat</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <div class="header-quick-nav">
+          <!-- BEGIN TOP NAVIGATION MENU -->
+          <div class="pull-left">
+            <ul class="nav quick-section">
+              <li class="quicklinks">
+                <a href="#" class="" id="layout-condensed-toggle">
+                  <i class="material-icons">menu</i>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav quick-section">
+             
+             
+             
+              
+            </ul>
+          </div>
+          
+          <!-- END TOP NAVIGATION MENU -->
+          <!-- BEGIN CHAT TOGGLER -->
+          <div class="pull-right">
+            <div class="chat-toggler sm">
+            
+            </div>
+            <ul class="nav quick-section ">
+              <li class="quicklinks">
+                <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
+                  <i class="material-icons">tune</i>
+                </a>
+                <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
+                 
+                  
+                 
+                  <li class="divider"></li>
+                  <li>
+                    <a th:href="@{/logout}"><i class="material-icons">power_settings_new</i>&nbsp;&nbsp;Deconnexion</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="quicklinks"> <span class="h-seperate"></span></li>
+             
+            </ul>
+          </div>
+          <!-- END CHAT TOGGLER -->
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+      </div>
+      <!-- END TOP NAVIGATION BAR -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+      <!-- BEGIN SIDEBAR -->
+        <div class="page-sidebar " id="main-menu">
+        <!-- BEGIN MINI-PROFILE -->
+        <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+          <div class="user-info-wrapper sm">
+           
+           <div class="user-info sm">
+              <div class="username"><p th:text="${userLive.username}"></p> </div>
+              <div class="status"><p th:text="${userLive.email}"></p></div>
+            </div>
+          </div>
+          <!-- END MINI-PROFILE -->
+          <!-- BEGIN SIDEBAR MENU -->
+          <p class="menu-title sm">BROWSE <span class="pull-right"><a href="javascript:;"><i class="material-icons">refresh</i></a></span></p>
+          <ul>
+            <li class="start "> <a href="index.html"><i class="material-icons">home</i> <span class="title">Acceuil</span> <span class="selected"></span> <span class="arrow "></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/AcceuilAdmin}"> Acceuil </a> </li>
+              </ul>
+            </li>
+            <li>
+             <a th:href="@{/listReclamation}"> <i class="material-icons">email</i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">203</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;"> <i class="material-icons">directions_bike</i> <span class="title">Station</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                <li> <a th:href="@{/Station1}">Gueliz </a> </li>
+                <li> <a th:href="@{/Station2}">Menara Mall</a> </li>
+                <li> <a th:href="@{/Station3}">Majorelle</a> </li>
+              </ul>
+            </li>
+          
+          
+           
+            
+            <li>
+              <a href="javascript:;"> <i class="material-icons">location_on</i> <span class="title">Maps</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+                  <li> <a th:href="@{/Maps}"> Station Maps </a> </li>
+              </ul>
+            </li>
+            <li>
+            	 <a href="javascript:;"> <i class="material-icons">payment</i> <span class="title">Abonnements</span> <span class=" arrow"></span> </a>
+              <ul class="sub-menu">
+              <li>
+              <a th:href="@{/ListAbn}"> Verification Pin </a> 
+            	
+            </li>
+                        </ul>
+            </li>
+           
+           
+         
+          <!-- END SIDEBAR MENU -->
+        </div>
+      </div>
+    
+      <!-- END SIDEBAR -->
+      
+      
+    <div class="page-content">
+    
+    
+    
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+        <div id="portlet-config" class="modal hide">
+          <div class="modal-header">
+            <button data-dismiss="modal" class="close" type="button"></button>
+            <h3>Widget Settings</h3>
+          </div>
+          <div class="modal-body"> Widget settings form goes here </div>
+          
+          
+        </div>
+        <div class="clearfix"></div>
+        <div class="content">
+       
+          <ul class="breadcrumb">
+            
+           
+          </ul>
+          
+          <div class="page-title"> <i class="icon-custom-left"></i>
+            <h3>Station - <span class="semi-bold">Menara Mall</span></h3>
+            
+            
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="grid simple form-grid">   
+                <div class="grid-title no-border">
+                  <h2>Entrer <span class="semi-bold">Velo </span></h2>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                   
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body no-border">
+                  <form th:action="@{/EntrerVelo}"   id="form_traditional_validation" name="form_traditional_validation" role="form" autocomplete="off" class="validate">
+                    <div class="form-group">
+                      <label class="form-label">Matricule Velo</label> <span class="help">e.g. "EE56"</span>
+                      <input class="form-control" id="form1Amount" name="matriculeVelo" type="text" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Identifiant Client </label> <span class="help">exemple: "Alaoui mourad"</span>
+                      <div class="input-with-icon right">
+                        <i class=""></i>
+                        <input class="form-control" id="form1CardHolderName" name="idClient" type="text" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                     
+                      <div class="input-with-icon right">
+                        <input class="form-control" id="form1CardNumber" name="idStation" type="hidden" value="1">
+                      </div>
+                    </div>
+                     <div class="tiles red  m-b-10" th:if="${Exception==true}" id="exception">
+                     <p>Erreur</p>
+                     </div>
+                    
+                    <div class="form-actions">
+                      <div class="pull-right">
+                        <button class="btn btn-success btn-cons" type="submit"><i class="icon-ok"></i> Enregistrer</button>
+                        <button class="btn btn-white btn-cons" type="button">Annuler</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="grid simple form-grid">
+                <div class="grid-title no-border">
+                  <h2>Sortir <span class="semi-bold">Velo</span></h2>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="#grid-config" data-toggle="modal" class="config"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body no-border">
+                  <br>
+                  <form id="form_iconic_validation" method="get" th:action="@{/SortirVelo}">
+                    <div class="form-group">
+                      <label class="form-label">Matricule Velo</label>
+                      <span class="help">exemple. "EE30"</span>
+                      <div class="input-with-icon  right">
+                        <i class=""></i>
+                        <input type="text" name="matriculeVelo" id="form1Name" class="form-control" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Identifiant Client</label>
+                      <span class="help">exemple. "10"</span>
+                      <div class="input-with-icon  right">
+                        <i class=""></i>
+                        <input type="number" name="idClient" id="form1Name" class="form-control" required>
+                      </div>
+                    </div>
+                      <div class="tiles red  m-b-10" th:if="${Exception==true}" id="exception">
+                     <p>Erreur</p>
+                     </div>
+                    
+                    <div class="form-group">
+                     
+                      <div class="input-with-icon right">
+                        <input class="form-control" id="form1CardNumber" name="idStation" type="hidden" value="1">
+                      </div>
+                    </div>
+                  
+                    <div class="form-actions">
+                      <div class="pull-right">
+                        <button type="submit" class="btn btn-danger btn-cons"><i class="icon-ok"></i> Enregistrer</button>
+                        <button type="button" class="btn btn-white btn-cons">Annuler</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+           <div class="row-fluid">
+            <div class="span12">
+              <div class="grid simple ">
+                <div class="grid-title">
+                  <h2>Historique <span class="semi-bold">Operation</span></h2>
+                  <div class="tools">
+                    <a href="javascript:;" class="collapse"></a>
+                    <a href="#grid-config" data-toggle="modal" class="config"></a>
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                </div>
+                <div class="grid-body ">
+                  <table class="table" id="example3">
+                    <thead>
+                      <tr>
+                        <th>N° Operation </th>
+                        <th>ID Client</th>
+                        <th>Matricule</th>
+                        <th>Type Operation</th>
+                        <th>Date</th>
+                        <th>Station</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="even gradeC" th:each="list : ${listHistorique}">
+								<td th:text="${list.id}"></td>
+								<td th:text="${list.idClient}"></td>
+								<td th:text="${list.matricule}"></td>
+								<td th:text="${list.type}"></td>
+								<td th:text="${list.date}"></td>
+								<td th:switch="${list.station}">
+    							<span th:case="'1'">Gueliz</span>
+   							 	<span th:case="'2'">Menara Mall </span>
+  							 	<span th:case="'3'">Majorelle</span>
+									</td>
+						</tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+           <div class="col-md-3 col-sm-6">
+              <div class="tiles blue    m-b-10">
+                <div class="tiles-body">
+                  <div class="controller">
+                    <a href="javascript:;" class="reload"></a>
+                    <a href="javascript:;" class="remove"></a>
+                  </div>
+                  <h3 class="text-black no-margin semi-bold">Station Gueliz</h3>
+                  <h1 class="text-white bold "><span data-animation-duration="900"  th:data-value="${nbr}" class="animate-number"></span></h1>
+                  <h4 class="text-black semi-bold  ">Velos Present</h4>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+      <!-- BEGIN CHAT -->
+      
+      <!-- END CHAT -->
+    </div>
+    <!-- END PAGE -->
+    <!-- END CONTAINER -->
+    <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+    <!-- BEGIN JS DEPENDECENCIES-->
+    <script src="assets/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-block-ui/jqueryblockui.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <!-- END CORE JS DEPENDECENCIES-->
+    <!-- BEGIN CORE TEMPLATE JS -->
+    <script src="webarch/js/webarch.js" type="text/javascript"></script>
+    <script src="assets/js/chat.js" type="text/javascript"></script>
+    <!-- END CORE TEMPLATE JS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    <script src="assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="assets/plugins/jquery-datatable/extra/js/dataTables.tableTools.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
+    <script type="text/javascript" src="assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+    <!-- END PAGE LEVEL JS INIT -->
+    <script src="assets/js/datatables.js" type="text/javascript"></script>
+     <script>
+    $( document ).ready(function(){
+            $('#exception').fadeIn('slow', function(){
+               $('#exception').delay(2500).fadeOut(); 
+            });
+        });
+        
+    </script>
+    <!-- END JAVASCRIPTS -->
+  </body>
+
+<!-- Mirrored from webarch.revox.io/3.0/html/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jun 2020 21:46:18 GMT -->
+</html>
